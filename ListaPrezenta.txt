@@ -1,2 +1,8 @@
-Grupa        Nume   Prenume
-TI4LF331     ENE    Florentin-Ovidiu
+
+Grupa     Nume   Prenume
+TI4LF331  Ene    Florentin-Ovidiu
+4LF331 Gavriluta Raul
+4LF331 Bizon Stefan
+4LF332A Popescu Ionut-Bogdan
+4LF331B Dumitru Iulian
+4LF331 Baduceanu Daniele
