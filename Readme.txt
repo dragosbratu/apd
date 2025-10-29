@@ -1,5 +1,5 @@
    1. git add
-   2. git clone - copiaza un repository in folder-ul nostru
+   2. git clone - copiaza un repository in folder-ul meu
    3. git commit
    4. git push 
    5. git status 
