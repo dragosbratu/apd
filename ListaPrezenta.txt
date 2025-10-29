@@ -11,7 +11,13 @@ Grupa Nume Prenume
 =======
 4LF331 Badiu Damian
 >>>>>>> team/4LF331A_BADIU_DAMIAN
+<<<<<<< HEAD
 
+
+
+
+=======
+>>>>>>> e79e178392bdea95d4285d27682d28b24ed25370
 
 
 4LF331 Florea Vlad
