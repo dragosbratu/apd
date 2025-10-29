@@ -1,0 +1,1 @@
+Comanda git push se folosește pentru a trimite modificările tale locale către un repository remote — de exemplu, pe GitHub, GitLab sau Bitbucket.
