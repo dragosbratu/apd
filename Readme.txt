@@ -1,0 +1,1 @@
+git clone is a Git command used to copy (or “clone”) a remote repository to your local computer.
