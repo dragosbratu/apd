@@ -4,5 +4,6 @@ Grupa Nume Prenume
 4LF331B Dumitru Iulian4LF331B Dumitru Iulian
 <<<<<<< HEAD
 4LF331 Baduceanu Daniele
+4LF332 Neagu Andrei
 =======
 >>>>>>> 50d39e431d697d756932bf3c633bfc483889e5dd
