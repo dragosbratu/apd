@@ -1,7 +1,1 @@
-   1. git add
-   2. git clone
-   3. git commit
-   4. git push
-   5. git status 
-   6. git log 
-   7. git fetch
+git status afiseaza starea curenta a fisierelor din repository, aratand ce fisiere sunt modificate, noi sau pregatite pentru commit
