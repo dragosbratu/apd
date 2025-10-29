@@ -3,3 +3,4 @@ Grupa Nume Prenume
 4LF332B Popescu Dragos Mihaicd 
 4LF332B Prodan Cosmin Daniel 
 G4321 Pop Ionut Daniel
+G4LF332B Rusu Alexandru
