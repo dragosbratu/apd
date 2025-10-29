@@ -1,0 +1,1 @@
+git commit saves the changes made to the project in the local repository
