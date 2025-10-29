@@ -1,1 +1,1 @@
-git status afiseaza starea curenta a fisierelor din repository, aratand ce fisiere sunt modificate, noi sau pregatite pentru commit
+git status afiseaza starea curenta a fisierelor din repository, aratand ce fisiere sunt modificate, noi sau pregatite pentru commit.
