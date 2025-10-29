@@ -1,11 +1,7 @@
 4LF331 Gavriluta Raul
-Grupa Nume Prenume
-<<<<<<< HEAD
 4LF331 Bizon Stefan
-=======
 4LF332A Popescu Ionut-Bogdan
 4LF331B Dumitru Iulian
-<<<<<<< HEAD
->>>>>>> main
-=======
->>>>>>> 6bbe08d32f6f1a59790adf72d644ed764cc590e3
+4LF331B Dumitru Iulian
+4LF331 Baduceanu Daniele
+4LF331A Dragan Ionut-Razvan
