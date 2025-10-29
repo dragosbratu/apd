@@ -5,3 +5,6 @@
 5. git status, arata starea curenta a repository-ului.
 6. git log, 
 7. git fetch
+git add este folosita pentru a adauga fisierele noi sau cele modificate, in faza de staging (inainte de commit)
+
+
