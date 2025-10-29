@@ -1,5 +1,6 @@
 
 Grupa Nume Prenume
+
 4LF331 Bîrladeanu Denis-George
 4LF331 Gavriluta Raul
 4LF331 Bizon Stefan
@@ -7,3 +8,4 @@ Grupa Nume Prenume
 4LF331B Dumitru Iulian
 4LF331 Baduceanu Daniele
 4LF331A Dragan Ionut-Razvan
+4LF331  Katai Hanna
