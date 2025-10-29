@@ -1,0 +1,1 @@
+git add - adds a new file to the repository 
