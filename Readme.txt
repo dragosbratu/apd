@@ -1,0 +1,1 @@
+git add stages changes so they will be included in the next commit.
