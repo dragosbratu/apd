@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 1.git add is a pre commit
 =======
 =======
@@ -37,3 +38,9 @@ This command creates a local folder containing the entire project so you can wor
 
 >>>>>>> 50d39e431d697d756932bf3c633bfc483889e5dd
 >>>>>>> 6bbe08d32f6f1a59790adf72d644ed764cc590e3
+=======
+
+
+
+Comanda git push este folosită pentru a trimite (împinge) modificările tale locale către un repository remote
+>>>>>>> team/4LF331A_BADIU_DAMIAN
