@@ -1,10 +1,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+1.git add is a pre commit
+=======
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 git clone is a Git command used to copy (or “clone”) a remote repository to your local computer.
 =======
 =======
 >>>>>>> 6bbe08d32f6f1a59790adf72d644ed764cc590e3
+>>>>>>> 50d39e431d697d756932bf3c633bfc483889e5dd
    1. git add
    2. git clone git clone is a Git command used to copy (or “clone”) a remote repository to your local computer.
    3. git commit
@@ -21,6 +26,8 @@ The git clone command is used to make a local copy of a remote repository.
 It downloads all the files, commit history, and branches from a Git server (like GitHub) to your computer.
 For example:
 
+<<<<<<< HEAD
+=======
 git clone https://github.com/username/repository.git
 
 
@@ -28,4 +35,5 @@ This command creates a local folder containing the entire project so you can wor
 >>>>>>> team/4LF331_DUMITRU_IULIAN
 =======
 
+>>>>>>> 50d39e431d697d756932bf3c633bfc483889e5dd
 >>>>>>> 6bbe08d32f6f1a59790adf72d644ed764cc590e3
