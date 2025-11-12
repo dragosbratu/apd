@@ -1,5 +1,5 @@
-4LF331 Gavriluta Raul
 Grupa Nume Prenume
+<<<<<<< HEAD
 <<<<<<< HEAD
 4LF331 Bizon Stefan
 4LF332A Popescu Ionut-Bogdan
@@ -12,3 +12,13 @@ Grupa Nume Prenume
 =======
 4LF331 Badiu Damian
 >>>>>>> team/4LF331A_BADIU_DAMIAN
+=======
+4LF332A OLTEANU CRISTIAN-ALIN-CLAUDIU
+4LF332B Popescu Dragos Mihaicd 
+4LF332B Prodan Cosmin Daniel 
+g787888 Andreea Mihaela R.
+G4LF332 A Lungu Rares-Ionut
+G4LF332 RUSU ALEXANDRU
+4LF331B Geaboc Bogdan
+G4LF331 Florea Vlad
+>>>>>>> 52c30613c7ffe4ff2845851d31c3f58024afc812

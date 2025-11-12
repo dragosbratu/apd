@@ -1,0 +1,2 @@
+git reset --soft commit hash
+git push -f main
