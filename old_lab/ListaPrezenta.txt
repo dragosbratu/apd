@@ -1,13 +1,24 @@
-
 Grupa Nume Prenume
-
-4LF331 Bîrladeanu Denis-George
-4LF331 Gavriluta Raul
+<<<<<<< HEAD
+<<<<<<< HEAD
 4LF331 Bizon Stefan
 4LF332A Popescu Ionut-Bogdan
-4LF331B Dumitru Iulian
+4LF331B Dumitru Iulian4LF331B Dumitru Iulian
+<<<<<<< HEAD
 4LF331 Baduceanu Daniele
-4LF331A Dragan Ionut-Razvan
-4LF331 Florea Vlad
-4LF331  Katai Hanna
-
+4LF332 Neagu Andrei
+=======
+>>>>>>> 50d39e431d697d756932bf3c633bfc483889e5dd
+=======
+4LF331 Badiu Damian
+>>>>>>> team/4LF331A_BADIU_DAMIAN
+=======
+4LF332A OLTEANU CRISTIAN-ALIN-CLAUDIU
+4LF332B Popescu Dragos Mihaicd 
+4LF332B Prodan Cosmin Daniel 
+g787888 Andreea Mihaela R.
+G4LF332 A Lungu Rares-Ionut
+G4LF332 RUSU ALEXANDRU
+4LF331B Geaboc Bogdan
+G4LF331 Florea Vlad
+>>>>>>> 52c30613c7ffe4ff2845851d31c3f58024afc812
