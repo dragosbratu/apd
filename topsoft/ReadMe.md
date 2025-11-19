@@ -1,8 +1,8 @@
 # Proiect: Asamblarea robotului 4WD Omni-Directional Mobile Robot Kit
 
 ## Echipa
-- Nume echipă: VoltageX
-- Moto Echipa: Puterea se mișcă în toate direcțiile.
+- Nume echipă: TopSoft
+- Moto Echipa: Mai vreau putini ani sa trag, dupa vreau sa ma retrag
 
 ---
 
