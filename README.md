@@ -132,15 +132,109 @@ Acest fragment de cod reprezintă programul principal folosit pentru controlul r
         delay(1500);
     }
 Acest cod este utilizat pentru testarea inițială a robotului și confirmă că toate cele patru roți reacționează corect și sincronizat. În urma rulării lui, robotul demonstrează capacitatea de deplasare în toate direcțiile și rotație pe loc, validând atât configurarea software, cât și funcționarea corectă a hardware-ului.
-Puteăți urmări deplasarea robotului in acest  ![VIDEO](https://www.youtube.com/watch?v=HBdZzmTGeaI).
+Puteăți urmări deplasarea robotului in acest [video](https://www.youtube.com/watch?v=HBdZzmTGeaI).
 
-# Compilare și upload
-TODO
+# Principiul de funcționare
+Robotul 4WD Omni-Directional utilizează patru roți omni de 100 mm, fiecare având role perpendiculare pe circumferința principală. Acest tip de roată permite robotului să se deplaseze nu doar înainte și înapoi, ca un robot clasic (non-holonomic), ci și lateral sau diagonal, fără a fi nevoie să își schimbe orientarea. Astfel robotul devine **holonomic**, având control complet pe axele X, Y și rotație.
 
-# ETC
+Fiecare roată este acționată de un motor DC echipat cu encoder. Encoderele oferă feedback despre viteză și rotație, permițând control mai precis și stabil, în special atunci când se folosesc algoritmi de reglare (PID). Controlul mișcării se realizează prin modificarea vitezei și direcției individuale a fiecărui motor. Pentru mișcare înainte toate roțile se rotesc în același sens, pentru mișcare laterală roțile au sensuri diferite, iar pentru rotație pe loc perechile de roți se rotesc în sens opus.
+
+La nivel software, librăria **Omni4WD** transformă comenzile de deplasare în comenzi individuale pentru motoare. Astfel, utilizatorul lucrează la nivel de „robot” (“mergi înainte”, “rotație stânga”), iar librăria calculează intern vitezele fiecărei roți.
+
+    // mișcare înainte
+    Omni.setCarAdvance(120);
+    
+    // mișcare lateral dreapta
+    Omni.setCarRight(120);
+    
+    // rotație pe loc
+    Omni.setCarRotateLeft(100);   
+Aceste funcții arată clar principiul: nu controlăm manual fiecare motor, ci dăm comenzi „logice”, iar librăria se ocupă de calculul cinematicii pentru robotul holonomic.
+
+# Arhitectura sistemului
+Arhitectura sistemului robotului 4WD Omni-Directional este bazată pe o colaborare directă între platforma hardware și structura software dezvoltată. Hardware-ul asigură partea fizică de acționare – motoarele, roțile omni și encoderele –, în timp ce software-ul gestionează logica mișcării și transformă comenzile abstracte în acțiuni reale. Placa Arduino reprezintă elementul central al sistemului, fiind responsabilă cu interpretarea codului încărcat și transmiterea semnalelor de control către fiecare motor prin intermediul plăcii IO Expansion. Astfel, fiecare comandă scrisă în codul sursă are un corespondent direct într-o acțiune fizică a robotului.
+
+La nivel software, librăria Omni4WD controlează comportamentul robotului ca sistem holistic. Atunci când în program se apelează funcții precum `setCarAdvance()`, `setCarLeft()` sau `setCarRotateLeft()`, acestea nu acționează direct o singură roată, ci calculează automat viteza și direcția potrivite pentru fiecare dintre cele patru motoare. Informațiile sunt apoi convertite în semnale PWM și semnale logice de direcție, care sunt trimise prin pinii Arduino către fiecare modul MotorWheel. În același timp, encoderele montate pe motoare trimit impulsuri înapoi către microcontroler, permițând sistemului să cunoască numărul de rotații și viteza reală, menținând astfel mișcarea stabilă și controlată.
+
+În acest fel, software-ul nu doar comandă, ci și „înțelege” comportamentul mecanic al robotului, iar hardware-ul nu doar execută, ci și oferă feedback. Această relație bidirecțională dintre Arduino, librăriile de control și ansamblul mecanic transformă robotul într-un sistem inteligent capabil să se deplaseze precis în orice direcție.
+
+Un exemplu de cod care reflectă această arhitectură este inițializarea sistemului Omni4WD, unde fiecare motor fizic este legat explicit de o instanță software:
+
+    MotorWheel wheel1(9, 8, 6, 7, &irq1);
+    MotorWheel wheel2(10, 11, 14, 15, &irq2);
+    MotorWheel wheel3(16, 17, 18, 19, &irq3);
+    MotorWheel wheel4(3, 2, 4, 5, &irq4);
+    
+    Omni4WD Omni(&wheel1, &wheel2, &wheel3, &wheel4);
+
+Aceste linii de cod reprezintă punctul în care arhitectura software „se conectează” la arhitectura hardware: fiecare obiect `MotorWheel` corespunde unui motor real, fiecare pin declarat este o conexiune fizică pe placă, iar instanța `Omni4WD` devine controllerul general care coordonează întregul ansamblu mecanic.
 
 
+# Conexiuni hardware și schema electrică
+Conexiunile hardware sunt esențiale pentru funcționarea corectă a platformei. Arduino și placa IO Expansion acționează ca interfață între motoare, encodere și alimentare. Fiecare motor este conectat cu:
 
+-   doi pini pentru control (PWM + direcție)
+-   doi pini pentru encoder (semnale A și B)
+-   alimentare
+
+Alimentația motoarelor este separată de alimentația logică Arduino, pentru a evita fluctuațiile care ar putea resetă microcontrolerul. IO Expansion Board distribuie tensiunea către motoare și semnalele de control către Arduino.
+
+Encoderele sunt conectate pe pini care suportă întreruperi, motiv pentru care se folosesc librăriile **PinChangeInt**. Acest lucru permite numărare precisă a impulsurilor chiar și la viteză ridicată.
+
+    // (PWM, DIRECTION, ENCODER_A, ENCODER_B)
+    MotorWheel wheel1(9, 8, 6, 7, &irq1);
+    MotorWheel wheel2(10, 11, 14, 15, &irq2);
+    MotorWheel wheel3(16, 17, 18, 19, &irq3);
+    MotorWheel wheel4(3, 2, 4, 5, &irq4);
+Aici putem observa un fragment de cod care reflectă conexiunile:
+-   fiecare motor are pini de control proprii
+-   fiecare encoder are doi pini
+-   fiecare motor este declarat explicit
+-   apoi toate sunt integrate în sistemul Omni4WD
+
+# Exercițiu: mișcarea robotului în cerc
+În cadrul proiectului a fost realizat și un exercițiu practic în care s-a urmărit obținerea unei mișcări circulare a robotului. Scopul a fost observarea modului în care distribuția tracțiunii pe roțile omni influențează traiectoria și verificarea răspunsului mecanic al platformei în condiții ușor „asimetrice”.
+
+Din punct de vedere teoretic, o mișcare circulară regulată se poate obține prin combinarea adecvată a vitezelor celor patru roți, astfel încât rezultanta vectorială a vitezelor să descrie o traiectorie curbată în jurul unui centru fix. În practică, însă, pentru a simplifica experimentul și a pune în evidență efectul controlului diferențiat al roților, s-a adoptat o soluție mai directă: robotul a fost configurat să se deplaseze cu **doar două roți active**, în timp ce celelalte două au fost lăsate neacționate. Această asimetrie generează un moment de rotație în jurul unei axe dinamice, ceea ce face ca robotul să descrie o traiectorie aproximativ circulară.
+
+La nivel de cod, s-a folosit aceeași arhitectură software descrisă anterior, bazată pe librăria `Omni4WD`. Codul de control pentru acest exercițiu a fost redus la o comandă simplă de deplasare menținută constant, iar configurația hardware (două roți active și două roți pasive) a determinat apariția mișcării circulare, fără a fi necesare calcule suplimentare în software. Fragmentul de cod utilizat a păstrat logica standard de „avans”, însă comportamentul fizic al robotului a fost modificat de modul în care au fost alocate roțile active.
+
+    #include <MotorWheel.h>
+    #include <Omni4WD.h>
+    #include <PinChangeInt.h>
+    #include <PinChangeIntConfig.h>
+    
+    // Definirea motoarelor (pin PWM, pin direcție, pin encoder A, pin encoder B)
+    MotorWheel wheel1(9, 8, 6, 7, &irq1);
+    MotorWheel wheel2(10, 11, 14, 15, &irq2);
+    MotorWheel wheel3(16, 17, 18, 19, &irq3);
+    MotorWheel wheel4(3, 2, 4, 5, &irq4);
+    
+    // Interfața Omni4WD asociată celor 4 roți
+    Omni4WD Omni(&wheel1, &wheel2, &wheel3, &wheel4);
+    
+    void setup() {
+        // Configurare timere pentru PWM
+        TCCR0B = TCCR0B & 0xf8 | 0x01;
+        TCCR1B = TCCR1B & 0xf8 | 0x01;
+    
+        // Robot oprit la inițializare
+        Omni.setCarStop();
+    
+        // aici, la nivel hardware, sunt alimentate/folosite doar două roți,
+        // celelalte două fiind lăsate pasive (neconectate / dezactivate)
+    }
+    
+    void loop() {
+        // Comandă de avans constantă; din cauza faptului
+        // că doar două roți sunt active, robotul descrie o traiectorie circulară
+        Omni.setCarAdvance(120);
+        delay(20);
+    }
+
+
+La finalul exercițiului, robotul a reușit să descrie o traiectorie circulară stabilă, demonstrând influența semnificativă a distribuției tracțiunii asupra direcției de deplasare. Pentru a evidenția clar rezultatul, a fost realizată și o filmare demonstrativă, care surprinde vizual comportamentul robotului în timpul executării mișcării circulare.
+![enter image description here](https://github.com/dragosbratu/apd/blob/69aae17c5c22ade49e3dcd5b618dd69f0fc4784f/15.mp4)
 
 ## Progres echipă
 
