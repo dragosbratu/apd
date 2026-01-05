@@ -74,20 +74,65 @@ Această placă extinde pinii Arduino, permitand robotului să conecteze toate c
 
 ## Asamblare pas cu pas
 Asamblarea robotului 4WD Omni-Directional începe cu pregătirea spațiului de lucru și verificarea componentelor din kit, pentru a ne asigura că toate piesele necesare sunt prezente. Șasiul din aluminiu se poziționează pe masă și se fixează elementele structurale astfel încât cadrul să fie stabil. Următorul pas este montarea motoarelor DC cu encoder în locașurile dedicate din șasiu, având grijă ca axele să fie orientate spre exterior și să nu existe joc mecanic. După fixarea lor, se montează roțile omni pe fiecare ax, acestea fiind prinse ferm și verificate manual pentru a se roti liber atât normal, cât și lateral.
-![enter image description here](https://github.com/dragosbratu/apd/blob/team/VoltageX/13.png?raw=true)
-
 ![enter image description here](https://github.com/dragosbratu/apd/blob/50138bd6e5674b997c9494053641db3b6fa8f878/13.jpeg)
 După ce partea mecanică este completă, se trece la electronica robotului. Placa Arduino se fixează pe șasiu, iar peste ea se montează placa de expansiune IO, care va permite conectarea tuturor motoarelor. Motoarele și encoderele sunt conectate la conectorii corespunzători de pe placă, cu atenție la polaritate și ordine. Ulterior, se configurează alimentarea robotului, conectând bateria la sistem și verificând că tensiunile sunt corecte.
-![enter image description here](https://github.com/dragosbratu/apd/blob/team/VoltageX/14.png?raw=true)
+![enter image description here](https://github.com/dragosbratu/apd/blob/5dc46374088c6fcb5b964e0a95e5e5be5dd7ffb1/14.jpeg)
 Înainte de prima pornire se face o verificare finală a șuruburilor, cablurilor și stabilității structurii. Arduino se conectează la computer prin USB, se încarcă programul de test și robotul este testat pentru mișcare înainte, înapoi, lateral și rotație pe loc. Dacă apar inversări de direcție, acestea se corectează din conexiuni sau din cod. După aceste verificări, robotul este complet funcțional și pregătit pentru testare și utilizare.
 
 ## Configurare software
-- Platformă: Arduino IDE / Python / altă platformă
-- Librării folosite:
-- Servo.h
-- LSS-Config
-- Adafruit_MotorShield
-- Exemple de rulare:
+Configurarea software a robotului 4WD Omni-Directional s-a realizat în **Visual Studio Code**, folosind extensiile dedicate pentru Arduino / PlatformIO, ceea ce permite dezvoltarea structurată a proiectului, gestionarea dependențelor și încărcarea rapidă a codului pe placă. Mediul a fost configurat astfel încât placa Arduino 328 să fie recunoscută automat iar compilatorul să folosească setările corecte pentru frecvența de lucru de 16 MHz și arhitectura AVR.
+
+În prima etapă a fost inițializat proiectul și definită configurația plăcii, portului serial și vitezei de comunicație. Acest lucru este important deoarece, fără selectarea corectă a plăcii și a portului, încărcarea nu este posibilă. În plus, baud rate-ul trebuie să fie corespunzător pentru debugging (de obicei 9600 sau 115200), astfel încât eventualele mesaje trimise prin Serial Monitor să poată fi analizate în timpul testelor.
+
+Platforma software se bazează pe librării specializate pentru roboți omni-direcționali. Librăria **MotorWheel** se ocupă de controlul la nivel de motor individual (semnale PWM, sens de rotație, citirea encoderelor), în timp ce **Omni4WD** gestionează mișcarea holonomică la nivel de robot complet. Practic, dezvoltatorul nu mai trebuie să calculeze manual viteza fiecărei roți pentru fiecare direcție, deoarece librăria face conversia dintre vectorul de mișcare dorit și valorile PWM pentru fiecare motor. Acest lucru este extrem de important pentru stabilitatea și precizia deplasării.
+
+Un alt aspect tehnic important este utilizarea encoderelor motoarelor și a întreruperilor (prin librăriile PinChangeInt). În funcție de configurația hardware, acestea permit controlul în buclă închisă (feedback), adică robotul poate menține viteza stabilă și constantă chiar dacă sarcina sau suprafața de rulare se schimbă. De asemenea, codul configurează timerele PWM (TCCR0B, TCCR1B), fapt esențial deoarece robotul are nevoie de frecvență corectă pentru funcționarea fluidă a motoarelor și pentru evitarea vibrațiilor sau oscilațiilor nedorite.
+
+După configurarea mediului, includerea librăriilor și setarea pinilor conform conexiunilor reale dintre Arduino, shield și motoare, proiectul a fost compilat și încărcat pe placă direct din Visual Studio Code. A urmat etapa de testare software, unde au fost verificate funcțiile de bază: pornire motoare, direcții corecte pentru fiecare roată, deplasare înainte/înapoi, lateral și rotație pe loc. Testele au confirmat funcționarea corectă a hardware-ului și validitatea configurației software.
+
+Acest fragment de cod reprezintă programul principal folosit pentru controlul robotului 4WD Omni-Directional. Codul utilizează librăriile MotorWheel și Omni4WD pentru a controla fiecare roată individual și pentru a realiza mișcări holonomice. Sunt definite cele patru motoare, se configurează temporizatoarele pentru semnalul PWM, iar în funcția `loop()` robotul execută o serie de mișcări de test: deplasare înainte, lateral stânga/dreapta și rotație în ambele sensuri.
+
+    #include <MotorWheel.h>
+    #include <Omni4WD.h>
+    #include <PinChangeInt.h>
+    #include <PinChangeIntConfig.h>
+   
+    MotorWheel wheel1(9, 8, 6, 7, &irq1);
+    MotorWheel wheel2(10, 11, 14, 15, &irq2);
+    MotorWheel wheel3(16, 17, 18, 19, &irq3);
+    MotorWheel wheel4(3, 2, 4, 5, &irq4);
+    
+    Omni4WD Omni(&wheel1, &wheel2, &wheel3, &wheel4);
+    
+    void setup() {
+        // Configurare timere pentru PWM
+        TCCR0B = TCCR0B & 0xf8 | 0x01;
+        TCCR1B = TCCR1B & 0xf8 | 0x01;
+    
+        Omni.setCarStop();
+    }
+    
+    void loop() {
+        Omni.setCarAdvance(100);
+        delay(2000);
+    
+        Omni.setCarLeft(100);
+        delay(2000);
+    
+        Omni.setCarRight(100);
+        delay(2000);
+    
+        Omni.setCarRotateLeft(100);
+        delay(1500);
+    
+        Omni.setCarRotateRight(100);
+        delay(1500);
+    
+        Omni.setCarStop();
+        delay(1500);
+    }
+Acest cod este utilizat pentru testarea inițială a robotului și confirmă că toate cele patru roți reacționează corect și sincronizat. În urma rulării lui, robotul demonstrează capacitatea de deplasare în toate direcțiile și rotație pe loc, validând atât configurarea software, cât și funcționarea corectă a hardware-ului.
+Puteăți urmări deplasarea robotului in acest  ![VIDEO](https://www.youtube.com/watch?v=HBdZzmTGeaI).
 
 # Compilare și upload
 TODO
