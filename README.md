@@ -73,9 +73,13 @@ Această placă extinde pinii Arduino, permitand robotului să conecteze toate c
 -   **Servo Power Select Jumper** – decide sursa de alimentare pentru servo  
 
 ## Asamblare pas cu pas
-Video Tutoriale si imagini poate chiar de la voi 
+Asamblarea robotului 4WD Omni-Directional începe cu pregătirea spațiului de lucru și verificarea componentelor din kit, pentru a ne asigura că toate piesele necesare sunt prezente. Șasiul din aluminiu se poziționează pe masă și se fixează elementele structurale astfel încât cadrul să fie stabil. Următorul pas este montarea motoarelor DC cu encoder în locașurile dedicate din șasiu, având grijă ca axele să fie orientate spre exterior și să nu existe joc mecanic. După fixarea lor, se montează roțile omni pe fiecare ax, acestea fiind prinse ferm și verificate manual pentru a se roti liber atât normal, cât și lateral.
+![enter image description here](https://github.com/dragosbratu/apd/blob/team/VoltageX/13.png?raw=true)
 
----
+![enter image description here](https://github.com/dragosbratu/apd/blob/50138bd6e5674b997c9494053641db3b6fa8f878/13.jpeg)
+După ce partea mecanică este completă, se trece la electronica robotului. Placa Arduino se fixează pe șasiu, iar peste ea se montează placa de expansiune IO, care va permite conectarea tuturor motoarelor. Motoarele și encoderele sunt conectate la conectorii corespunzători de pe placă, cu atenție la polaritate și ordine. Ulterior, se configurează alimentarea robotului, conectând bateria la sistem și verificând că tensiunile sunt corecte.
+![enter image description here](https://github.com/dragosbratu/apd/blob/team/VoltageX/14.png?raw=true)
+Înainte de prima pornire se face o verificare finală a șuruburilor, cablurilor și stabilității structurii. Arduino se conectează la computer prin USB, se încarcă programul de test și robotul este testat pentru mișcare înainte, înapoi, lateral și rotație pe loc. Dacă apar inversări de direcție, acestea se corectează din conexiuni sau din cod. După aceste verificări, robotul este complet funcțional și pregătit pentru testare și utilizare.
 
 ## Configurare software
 - Platformă: Arduino IDE / Python / altă platformă
@@ -92,19 +96,19 @@ TODO
 
 
 
-## Progres 
+
 ## Progres echipă
 
 | Nr. | Etapă                         | Descriere scurtă                                  | Status | Data finalizării |
 |-----|-------------------------------|--------------------------------------------------|---------|------------------|
-| 1 | Verificare componente          | Inventarierea pieselor și verificarea integrității | ✅ |  |
-| 2 | Montaj mecanic                 | Asamblarea bazei, fixarea motoarelor, șuruburi etc. |  ❌ |  |
-| 3 | Conectare electronică          | Conectarea controlerului, cabluri, alimentare     |  ❌ |  |
-| 4 | Test inițial mișcare           | Verificarea mișcărilor de bază / cod test         | ❌ |  |
-| 5 | Configurare software           | Instalare librării, upload cod, calibrare         | ❌ |  |
-| 6 | Test final                     | Verificare completă a funcționării robotului      | ❌ |  |
-| 7 | Documentare și imagini         | Scriere README, poze, diagrame, linkuri utile     | ❌ |  |
-| 8 | Prezentare finală              | Demonstrație funcțională în laborator             | ❌ |  |
+| 1 | Verificare componente          | Inventarierea pieselor și verificarea integrității | ✅ | 12.11.2025 |
+| 2 | Montaj mecanic                 | Asamblarea bazei, fixarea motoarelor, șuruburi etc. |  ✅ | 12.11.2025 |
+| 3 | Conectare electronică          | Conectarea controlerului, cabluri, alimentare     |  ✅ | 19.11.2025 |
+| 4 | Test inițial mișcare           | Verificarea mișcărilor de bază / cod test         | ✅ | 26.11.2025 |
+| 5 | Configurare software           | Instalare librării, upload cod, calibrare         | ✅ | 03.12.2025 |
+| 6 | Test final                     | Verificare completă a funcționării robotului      | ✅ | 10.12.2025 |
+| 7 | Documentare și imagini         | Scriere README, poze, diagrame, linkuri utile     | ✅ | 17.12.2025 |
+| 8 | Prezentare finală              | Demonstrație funcțională în laborator             | ✅ | 14.01.2026 |
 
 Legenda status:  
 ✅ = Finalizat  ⏳ = În desfășurare  ❌ = Neînceput
