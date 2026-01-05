@@ -234,7 +234,8 @@ La nivel de cod, s-a folosit aceeași arhitectură software descrisă anterior, 
 
 
 La finalul exercițiului, robotul a reușit să descrie o traiectorie circulară stabilă, demonstrând influența semnificativă a distribuției tracțiunii asupra direcției de deplasare. Pentru a evidenția clar rezultatul, a fost realizată și o filmare demonstrativă, care surprinde vizual comportamentul robotului în timpul executării mișcării circulare.
-![enter image description here](https://github.com/dragosbratu/apd/blob/69aae17c5c22ade49e3dcd5b618dd69f0fc4784f/15.mp4)
+ Pentru vizionare apăsați pe 
+[VIDEO ](https://github.com/dragosbratu/apd/blob/c9c1e6a8895ece7c8dcd5c4484f1547fd9db53e6/15.mp4).
 
 ## Progres echipă
 
