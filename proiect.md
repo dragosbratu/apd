@@ -10,10 +10,10 @@ Roboții folosiți sunt:
 2. [4WD Omni-Directional Arduino Compatible Mobile Robot Kit](https://www.robotshop.com/products/4wd-omni-directional-arduino-compatible-mobile-robot?srsltid=AfmBOoopzthGfER1vutACY_bCGENh0BF3PSMCQv6BD-fFLpwZTj4gWwj)
 
 
-# Proiect: Asamblarea robotului [Nume robot]
+# Proiect: Asamblarea robotului [Lynxmotion LSS 3 DoF Arm]
 
 ## Echipa
-- Nume echipă: [ex: 404_not_found]
+- Nume echipă: git_gud
 - Moto Echipa
 ## Descriere generală
 Scopul proiectului este asamblarea și testarea robotului [nume robot complet], în cadrul laboratorului APD.  
