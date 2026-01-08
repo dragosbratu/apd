@@ -13,7 +13,7 @@ Lynxmotion SES-V2 Robotic Arm (3 DoF) w/ Smart Servos Kit (https://eu.robotshop.
 
 ## Echipa
 - Nume echipă: git_gud
-- Moto Echipa
+- Moto Echipa: Git commit. Git push. Git Gud.
 - 
 ## Descriere generală
 Scopul proiectului este asamblarea și testarea robotului Lynxmotion LSS 3 DoF Arm, în cadrul laboratorului APD.  
@@ -77,12 +77,10 @@ Video Tutoriale si imagini poate chiar de la voi
 ---
 
 ## Configurare software
-- Platformă: Arduino IDE / Python / altă platformă
-- Librării folosite:
-- Servo.h
-- LSS-Config
-- Adafruit_MotorShield
-- Exemple de rulare:
+
+- Platformă: LSS FlowArm (aplicație Windows, control GUI)
+
+- Exemple de rulare: https://www.youtube.com/watch?v=SLJi2BDQgF8
 
 # Compilare și upload
 TODO
@@ -108,4 +106,5 @@ TODO
 
 Legenda status:  
 ✅ = Finalizat  ⏳ = În desfășurare  ❌ = Neînceput
+
 
