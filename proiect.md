@@ -10,13 +10,13 @@ Roboții folosiți sunt:
 2. [4WD Omni-Directional Arduino Compatible Mobile Robot Kit](https://www.robotshop.com/products/4wd-omni-directional-arduino-compatible-mobile-robot?srsltid=AfmBOoopzthGfER1vutACY_bCGENh0BF3PSMCQv6BD-fFLpwZTj4gWwj)
 
 
-# Proiect: Asamblarea robotului [Lynxmotion LSS 3 DoF Arm]
+# Proiect: Asamblarea robotului Lynxmotion LSS 3 DoF Arm
 
 ## Echipa
 - Nume echipă: git_gud
 - Moto Echipa
 ## Descriere generală
-Scopul proiectului este asamblarea și testarea robotului [nume robot complet], în cadrul laboratorului APD.  
+Scopul proiectului este asamblarea și testarea robotului Lynxmotion LSS 3 DoF Arm, în cadrul laboratorului APD.  
 Documentația include pașii de montaj, configurare, testare și eventuale îmbunătățiri aduse.
 
 ---
@@ -87,20 +87,21 @@ TODO
 # ETC
 
 
-
 ## Progres 
 ## Progres echipă
 
-| Nr. | Etapă                         | Descriere scurtă                                  | Status | Data finalizării |
-|-----|-------------------------------|--------------------------------------------------|---------|------------------|
-| 1 | Verificare componente          | Inventarierea pieselor și verificarea integrității | ✅ |  |
-| 2 | Montaj mecanic                 | Asamblarea bazei, fixarea motoarelor, șuruburi etc. |  ❌ |  |
-| 3 | Conectare electronică          | Conectarea controlerului, cabluri, alimentare     |  ❌ |  |
-| 4 | Test inițial mișcare           | Verificarea mișcărilor de bază / cod test         | ❌ |  |
-| 5 | Configurare software           | Instalare librării, upload cod, calibrare         | ❌ |  |
-| 6 | Test final                     | Verificare completă a funcționării robotului      | ❌ |  |
-| 7 | Documentare și imagini         | Scriere README, poze, diagrame, linkuri utile     | ❌ |  |
-| 8 | Prezentare finală              | Demonstrație funcțională în laborator             | ❌ |  |
+| Nr |          Etapă         |                  Descriere scurtă                  | Status |
+|:--:|:----------------------:|:--------------------------------------------------:|:------:|
+|  1 |  Verificare componente | Inventarierea pieselor și verificarea integrității |    ✅   |
+|  2 |     Montaj mecanic     |   Asamblarea bazei, fixarea motoarelor, șuruburi   |    ✅   |
+|  3 |  Conectare electronică |    Conectarea controlerului, cabluri, alimentare   |    ✅   |
+|  4 |  Test inițial mișcare  |      Verificarea mișcărilor de bază / cod test     |    ✅   |
+|  5 |  Configurare software  |      Instalare librării, upload cod, calibrare     |    ✅   |
+|  6 |       Test final       |    Verificare completă a funcționării robotului    |    ⏳   |
+|  7 | Documentare și imagini |    Scriere README, poze, diagrame, linkuri utile   |    ✅   |
+|  8 |    Prezentare finală   |        Demonstrație funcțională în laborator       |    ⏳   |
+  
+
 
 Legenda status:  
 ✅ = Finalizat  ⏳ = În desfășurare  ❌ = Neînceput
