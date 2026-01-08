@@ -2,11 +2,11 @@
 
 ## Descriere generală
 
-Scopul proiectului este asamblarea și documentarea celor doi roboți din laborator, utilizând GitHub pentru colaborare și versionare.
+Scopul proiectului este asamblarea și documentarea robotului din laborator, utilizând GitHub pentru colaborare și versionare.
 
 Robotul folosit este:
 
-Lynxmotion SES-V2 Robotic Arm (3 DoF) w/ Smart Servos Kit](https://eu.robotshop.com/products/lynxmotion-lss-3-dof-robotic-arm-kit)
+Lynxmotion SES-V2 Robotic Arm (3 DoF) w/ Smart Servos Kit (https://eu.robotshop.com/products/lynxmotion-lss-3-dof-robotic-arm-kit)
 
 
 # Proiect: Asamblarea robotului Lynxmotion LSS 3 DoF Arm
