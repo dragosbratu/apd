@@ -51,7 +51,6 @@ Am utilizat robotul: Lynxmotion SES-V2 Robotic Arm (3 DoF) ([https://eu.robotsho
 | 1 | <img src="https://wiki.lynxmotion.com/info/wiki/lynxmotion/download/servo-erector-set-system/ses-servos/ses-lynxmotion-smart-servo/WebHome/LSS-ST1-HORNS.PNG" width="100"> | Servo Inteligente | `LSS-ST1` | 3 | LSS Standard |
 | 2 | <img src="https://wiki.lynxmotion.com/info/wiki/lynxmotion/download/ses-v2-arms/lss-base-rotate/lss-base-rotate-g10-assembly/WebHome/LSS-BR-KT-Ghost.PNG" width="100"> | Kit Rotire Bază | `LSS-BR-KT` | 1 | Base Rotate Kit |
 | 3 | <img src="https://wiki.lynxmotion.com/info/wiki/lynxmotion/download/ses-v2-arms/ses-v2-mini-gripper-rc/WebHome/SES-MG-KT.PNG" width="100"> | Kit Mini Gripper | `SES-MG-KT` | 1 | Mini Gripper Kit |
-|
 | **B** | | **Electronică** | | | |
 | 4 | <img src="https://wiki.lynxmotion.com/info/wiki/lynxmotion/download/servo-erector-set-system/ses-electronics/ses-modules/lss-adapter-board/WebHome/LSS-ADA.png" width="100"> | Adaptor LSS | `LSS-ADA` | 1 | Placă interfață |
 | 5 | <img src="https://wiki.lynxmotion.com/info/wiki/lynxmotion/download/servo-erector-set-system/ses-electronics/ses-modules/lss-2io-board/WebHome/LSS-2IO.PNG" width="100"> | Microcontroler | `LSS-2IO` | 1 | Modul programabil |
