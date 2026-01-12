@@ -72,13 +72,100 @@ Lynxmotion SES-V2 Robotic Arm (3 DoF) w/ Smart Servos Kit (https://eu.robotshop.
 ---
 
 ## Asamblare pas cu pas
-Video Tutoriale si imagini poate chiar de la voi 
+
+Pașii urmați se pot găsi în documentația robotului: https://wiki.lynxmotion.com/info/wiki/lynxmotion/view/ses-v2/ses-v2-arms/lss-3-dof-arm/3dof-arm-quickstart/
+
+<img width="1934" height="2048" alt="image" src="https://github.com/user-attachments/assets/347e0998-8067-42b2-be09-b0873ded6bab" />
+
+### 1. Servo Setup
+
+* ID-urile unice: **1** (Base), **2** (Shoulder) și **3** (Elbow).
+
+*  **Motor ID 1 (Base):** Am instalat discul de transmisie **LSS-DH** pe axul motorului pentru a permite rotația întregii structuri superioare.
+
+*  **Motor ID 2 (Shoulder):** Am montat suportul metalic tip "U" **ASB-28** pe flanșa motorului, fixat cu 4 șuruburi **PHS-02**.
+
+*  **Motor ID 3 (Elbow):** Am instalat un suport **ASB-28** pentru conexiunea cu segmentul superior și am pregătit axul pentru cuplarea cu suportul gripper-ului.
+
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/dc7d01f6-4c89-4967-a0af-2fd054446d5e" />
+
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/fb0ff405-f906-4e44-9604-f350060f465c" />
+
+  
+
+### 2. Base
+
+*  **Montarea** motorului **ID 1** pe placa de mijloc `LSS-BR-M1`impreuna cu placa intermediara `LSS-BR-M2`.
+
+* Instalarea celor 5 distanțiere `AHS-19`.
+
+* Cuplarea horn-ului impreuna cu baza `LSS-3DOF-B`, placa superioara `LSS-BR-T` si placa inferioara `LSS-BR-B`.
+
+*  **Integrarea** microcontrolerului `LSS-2IO-KT` si a regulatorului de tensiune `LSS-5VR-KT`.
+
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/791817f9-e1d9-429e-89fb-d22674369140" />
+
+
+### 3. Preparation
+
+*  **Pregătire Servo Shoulder:** Fixarea segmentului `link-01` pe hornul motorului **ID 2** folosind șuruburi `PHS-02`.
+
+*  **Pregătire Servo Elbow:** Atașarea `link-05` pe horn-ul motorului **ID 3**, pregătind axul pentru restul structurii.
+
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/27878d11-1e77-4361-a16b-faf3adf02268" />
+
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/8c729cc8-2afd-450f-b35d-1e940c033829" />
+
+  
+
+### 4. Links
+
+* Interconectarea link-urilor pe motoarele **ID 2** si **ID 3**.
+
+* Strângerea hardware-ului pe întregul lanț, rezultând brațul mecanic complet, gata pentru efectorul final.
+
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/6b270087-665d-4aff-9ea6-2df3a655e6c6" />
+
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/e3afb1e8-c9d6-41c9-be05-48d03a924e60" />
+
+  
+
+### 5. Mini Gripper
+
+*  **Asamblarea kit-ului mecanic de prindere**  `SES-MG-KT`.
+
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/5c94b283-e125-4936-8bc0-f990201983c7" />
+
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/39f8592b-3061-4c51-bc02-6e271f6d6108" />
+
+  
+### 6. Final
+
+* Fixarea cleștelui asamblat la Pasul 5 pe suportul `ASB-43` și cuplarea acestuia direct pe axul motorului **ID 3**.
+
+* Montarea bratului pe placa baza.
+
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/a6f0eb1c-2231-4ed1-b208-17fca03e6ecd" />
+
+
+  
+
+### 7. Wiring
+
+* Conectarea adaptorului `LSS-ADA`, a jumperului, microcontrolerului, regulatorului si a sursei cu cabluri `LSS-C-150-Y`, `LSS-C-100-S`, `USBC-02`, `SEA-01` si asigurarea lor cu curele de siguranță `ZT-07in`.
+
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/aadb52a0-0b94-41b8-8e53-d02d2fee4c28" />
+
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/4ef7ec80-2f44-4392-90ba-9fffb56d354f" />
+
 
 ---
 
 ## Configurare software
 
 - Platformă: LSS FlowArm (aplicație Windows, control GUI)
+
+<img width="1522" height="869" alt="image" src="https://github.com/user-attachments/assets/abf08df3-1caa-4e56-9fff-d1c28c9b93ef" />
 
 - Exemple de rulare: https://www.youtube.com/watch?v=SLJi2BDQgF8
 
@@ -106,6 +193,7 @@ TODO
 
 Legenda status:  
 ✅ = Finalizat  ⏳ = În desfășurare  ❌ = Neînceput
+
 
 
 
