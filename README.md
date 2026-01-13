@@ -89,7 +89,7 @@ Documentația oficială de asamblare utilizată: [Lynxmotion Wiki - 3DoF Arm Qui
 
 | Inventar Echipa | Start Asamblare |
 |:---:|:---:|
-| ![Inceput1](inceput1.jpeg) | ![Inceput2](inceput2.jpeg) |
+| ![Inceput1](poze/inceput1.jpeg) | ![Inceput2](poze/inceput2.jpeg) |
 
 ### 2. Asamblarea Bazei și a primelor articulații
 Am început construcția mecanică urmând instrucțiunile pentru bază (Base Rotate Kit). Am montat primul servo LSS-ST1 pe placa de bază și am început să fixăm primele bracket-uri.
@@ -97,21 +97,21 @@ A fost important să verificăm orientarea servo-urilor pentru a corespunde cu d
 
 | Lucru la bază | Progres intermediar |
 |:---:|:---:|
-| ![Mid1](mid1.jpeg) | ![Mid2](mid2.jpeg) |
+| ![Mid1](poze/mid1.jpeg) | ![Mid2](poze/mid2.jpeg) |
 
 ### 3. Construcția Brațului (Link-uri și Servo-uri)
 Am atașat segmentele brațului (Link-urile 1 până la 6) folosind șuruburi 2-56 și M3. Am conectat servo-urile pentru articulațiile "Umăr" (Shoulder) și "Cot" (Elbow). În această etapă, structura a început să capete formă verticală.
 
 | Fixare articulații | Verificare structură |
 |:---:|:---:|
-| ![Final1](final1.jpeg) | ![Spre Final](spre_final.jpeg) |
+| ![Final1](poze/final1.jpeg) | ![Spre Final](poze/spre_final.jpeg) |
 
 ### 4. Finalizare și Montare Gripper
 Ultimul pas mecanic a fost atașarea kit-ului **Mini Gripper** la capătul brațului și rutarea cablurilor de date folosind suporturile speciale (Cable Clips) pentru a preveni încurcarea lor în timpul mișcării. Echipa a verificat stabilitatea întregului ansamblu.
 
 | Discuții finale | Robot Complet |
 |:---:|:---:|
-| ![Spre Final 2](spre_final2.jpeg) | ![Final2](final2.jpeg) |
+| ![Spre Final 2](poze/spre_final2.jpeg) | ![Final2](poze/final2.jpeg) |
 
 ---
 
