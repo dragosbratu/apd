@@ -1,45 +1,37 @@
 
 # Proiect: Asamblarea și documentarea roboților
 
-  
-
 ## Descriere generală
 
-  
-
-Scopul proiectului este asamblarea și documentarea robotului din laborator, utilizand GitHub pentru colaborare și versionare.
-
-  
+Scopul proiectului este asamblarea și documentarea robotului din laborator, utilizând GitHub pentru colaborare și versionare.
 
 Robotul utilizat este:
- [Lynxmotion SES-V2 Robotic Arm (3 DoF) w/ Smart Servos Kit](https://eu.robotshop.com/products/lynxmotion-lss-3-dof-robotic-arm-kit)
-  
+[Lynxmotion SES-V2 Robotic Arm (3 DoF) w/ Smart Servos Kit](https://eu.robotshop.com/products/lynxmotion-lss-3-dof-robotic-arm-kit)
 
+---
 
 # Proiect: Asamblarea Lynxmotion SES-V2 Robotic Arm (3 DoF)
 
-  
-
 ## Echipa
 
-- Nume echipă: SamsungWhirlpoolTV
+- **Nume echipă:** SamsungWhirlpoolTV
+- **Moto Echipa:** Nu ne chemati, nici noi nu stim :D
 
-- Moto Echipa: Nu ne chemati, nici noi nu stim:D
- 
-      Baduceanu Daniel
-      Birladeanu Denis
-      Cojocaru Gabriel
-      Motoasca Sebastian
-      Nita Robert
-      
+### Membri:
+- Baduceanu Daniel
+- Birladeanu Denis
+- Cojocaru Gabriel
+- Motoasca Sebastian
+- Nita Robert
 
 ## Descriere generală
 
 Scopul proiectului este asamblarea și testarea robotului Lynxmotion LSS 3 DoF Arm, în cadrul laboratorului APD.
 
-Am utilizat robotul: Lynxmotion SES-V2 Robotic Arm (3 DoF) ([https://eu.robotshop.com/products/lynxmotion-lss-3-dof-robotic-arm-kit](https://eu.robotshop.com/products/lynxmotion-lss-3-dof-robotic-arm-kit))
+Am utilizat robotul: **Lynxmotion SES-V2 Robotic Arm (3 DoF)**
+([https://eu.robotshop.com/products/lynxmotion-lss-3-dof-robotic-arm-kit](https://eu.robotshop.com/products/lynxmotion-lss-3-dof-robotic-arm-kit))
 
-  
+Documentația oficială de asamblare utilizată: [Lynxmotion Wiki - 3DoF Arm Quickstart](https://wiki.lynxmotion.com/info/wiki/lynxmotion/view/ses-v2/ses-v2-arms/lss-3-dof-arm/3dof-arm-quickstart/)
 
 ---
 
@@ -90,54 +82,58 @@ Am utilizat robotul: Lynxmotion SES-V2 Robotic Arm (3 DoF) ([https://eu.robotsho
 
 ---
 
-
 ## Asamblare pas cu pas
 
-poze (CJ)
+### 1. Pregătirea componentelor
+În prima etapă, am scos toate componentele din cutii și le-am sortat conform listei de inventar. Am separat șuruburile, elementele de structură din G10 și servo-urile inteligente LSS.
 
-  
+| Inventar Echipa | Start Asamblare |
+|:---:|:---:|
+| ![Inceput1](inceput1.jpeg) | ![Inceput2](inceput2.jpeg) |
+
+### 2. Asamblarea Bazei și a primelor articulații
+Am început construcția mecanică urmând instrucțiunile pentru bază (Base Rotate Kit). Am montat primul servo LSS-ST1 pe placa de bază și am început să fixăm primele bracket-uri.
+A fost important să verificăm orientarea servo-urilor pentru a corespunde cu diagramele din documentație.
+
+| Lucru la bază | Progres intermediar |
+|:---:|:---:|
+| ![Mid1](mid1.jpeg) | ![Mid2](mid2.jpeg) |
+
+### 3. Construcția Brațului (Link-uri și Servo-uri)
+Am atașat segmentele brațului (Link-urile 1 până la 6) folosind șuruburi 2-56 și M3. Am conectat servo-urile pentru articulațiile "Umăr" (Shoulder) și "Cot" (Elbow). În această etapă, structura a început să capete formă verticală.
+
+| Fixare articulații | Verificare structură |
+|:---:|:---:|
+| ![Final1](final1.jpeg) | ![Spre Final](spre_final.jpeg) |
+
+### 4. Finalizare și Montare Gripper
+Ultimul pas mecanic a fost atașarea kit-ului **Mini Gripper** la capătul brațului și rutarea cablurilor de date folosind suporturile speciale (Cable Clips) pentru a preveni încurcarea lor în timpul mișcării. Echipa a verificat stabilitatea întregului ansamblu.
+
+| Discuții finale | Robot Complet |
+|:---:|:---:|
+| ![Spre Final 2](spre_final2.jpeg) | ![Final2](final2.jpeg) |
 
 ---
 
-  
-
-
 ## Configurare software
 
-- Platformă: LSS FlowArm (Windows)
+- **Platformă:** LSS FlowArm (Windows)
+- **Exemple de rulare:** [Demo YouTube](https://youtube.com/shorts/_G3lMXUCUkE?si=kFqkilaSGQVpvdnp)
 
-- Exemple de rulare: https://youtube.com/shorts/_G3lMXUCUkE?si=kFqkilaSGQVpvdnp
-
-  
-
-# Compilare și upload
-
-TODO
-
-  
-
-# ETC
-
-  
-  
-  
-
-## Progres
+---
 
 ## Progres echipă
 
-| Nr |          Etapă         |                  Descriere scurtă                  | Status |
+| Nr | Etapă | Descriere scurtă | Status |
 |:--:|:----------------------:|:--------------------------------------------------:|:------:|
-|  1 |  Verificare componente | Inventarierea pieselor și verificarea integrității |    ✅   |
-|  2 |     Montaj mecanic     |   Asamblarea bazei, fixarea motoarelor, șuruburi   |    ✅   |
-|  3 |  Conectare electronică |    Conectarea controlerului, cabluri, alimentare   |    ✅   |
-|  4 |  Test inițial mișcare  |      Verificarea mișcărilor de bază / cod test     |    ⏳   |
-|  5 |  Configurare software  |      Instalare librării, upload cod, calibrare     |    ⏳   |
-|  6 |       Test final       |    Verificare completă a funcționării robotului    |    ⏳   |
-|  7 | Documentare și imagini |    Scriere README, poze, diagrame, linkuri utile   |    ✅   |
-|  8 |    Prezentare finală   |        Demonstrație funcțională în laborator       |    ⏳   |
-  
+| 1 | Verificare componente | Inventarierea pieselor și verificarea integrității | ✅ |
+| 2 | Montaj mecanic | Asamblarea bazei, fixarea motoarelor, șuruburi | ✅ |
+| 3 | Conectare electronică | Conectarea controlerului, cabluri, alimentare | ✅ |
+| 4 | Test inițial mișcare | Verificarea mișcărilor de bază / cod test | ❌ |
+| 5 | Configurare software | Instalare librării, upload cod, calibrare | ❌ |
+| 6 | Test final | Verificare completă a funcționării robotului | ❌ |
+| 7 | Documentare și imagini | Scriere README, poze, diagrame, linkuri utile | ✅ |
+| 8 | Prezentare finală | Demonstrație funcțională în laborator | ❌ |
 
-Legenda status:
-
-✅ = Finalizat  ⏳ = În desfășurare  ❌ = Neînceput
+**Legenda status:**
+✅ = Finalizat | ⏳ = În desfășurare | ❌ = Neînceput
