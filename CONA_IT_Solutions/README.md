@@ -54,7 +54,47 @@ Documentația include pașii de montaj, configurare, testare și eventuale îmbu
 ---
 
 ## Asamblare pas cu pas
-Video Tutoriale si imagini poate chiar de la voi 
+### Faza 1: Configurarea inițială a Servomotoarelor (CRITIC)
+**Atenție:** Înainte de a monta orice șurub, fiecare motor trebuie configurat electronic pentru a avea un ID unic.
+1.  Se conectează sursa de alimentare la placa **LSS-ADA**.
+2.  Se conectează placa LSS-ADA la PC prin USB.
+3.  Se conectează **câte un singur servomotor** pe rând la placă.
+4.  Se deschide softul **LSS Config** și se setează ID-urile astfel:
+    * **ID 1:** Baza (Base)
+    * **ID 2:** Umăr (Shoulder)
+    * **ID 3:** Cot (Elbow)
+    * *(Gripper-ul analogic nu are ID LSS, se controlează prin LSS-2IO)*.
+
+
+### Faza 2: Asamblarea Bazei (Base Assembly)
+1.  **Pregătire placă:** Pe placa de bază (LSS-3DOF-BP) se montează piciorușele de cauciuc și rulmentul mare din kitul LSS-BR-KT.
+2.  **Montare Servo ID 1:** Servomotorul configurat cu ID 1 se fixează în centrul bazei folosind șuruburile M3.
+3.  **Montare placă turnantă:** Se atașează discul rotativ peste axul servomotorului.
+
+### Faza 3: Pregătirea Servomotoarelor pentru Braț
+1.  **Servo ID 2 (Umăr):** Se montează bracket-ul din aluminiu (ASB-28) pe servomotor folosind șuruburile de prindere specifice. Asigurați-vă că "zero-ul" motorului este aliniat corect.
+2.  **Servo ID 3 (Cot):** Se montează al doilea bracket ASB-28 pe acest motor. Se adaugă piesa "Link #1" (LSS-3DOF-L-01) care va face legătura mecanică.
+
+### Faza 4: Elementele de Legătură (Links)
+1.  **Link-urile compozite:** Se asamblează perechile de plăci G10 (Link #2, #4) folosind distanțierele metalice.
+2.  **Unirea brațelor:**
+    * Se conectează ansamblul Bazei (ID 1) cu Umărul (ID 2) folosind Link-urile laterale.
+    * Se conectează Umărul (ID 2) cu Cotul (ID 3).
+    * *Notă:* Strângeți șuruburile ferm, dar nu forțați plăcile de compozit pentru a nu le crăpa.
+
+### Faza 5: Asamblarea Gripper-ului (Mini Gripper)
+1.  **Mecanism:** Se asamblează roțile dințate și brațele paralele ale kitului SES-MG-KT.
+2.  **Servo Gripper:** Se montează micro-servomotorul în locașul dedicat.
+3.  **Montare pe braț:** Gripper-ul complet asamblat se atașează de brațul cotului (Servo ID 3) folosind bracket-ul "Mini C" (ASB-43).
+
+### Faza 6: Cablare (Wiring)
+1.  **Bus LSS:** Se conectează cablurile seriale în cascadă (daisy chain):
+    * LSS-ADA -> Servo ID 1 (Bază)
+    * Servo ID 1 -> Servo ID 2 (Umăr)
+    * Servo ID 2 -> Servo ID 3 (Cot)
+2.  **Gripper:** Cablul micro-servomotorului se conectează la placa **LSS-2IO**.
+3.  **LSS-2IO:** Se conectează prin cablu LSS la portul liber al Servo ID 3 (Cot).
+4.  **Management:** Se folosesc șoriceii (Zip ties) pentru a fixa cablurile de brațe, lăsând bucle de relaxare ("service loops") în dreptul articulațiilor pentru a permite mișcarea liberă.
 
 ---
 
