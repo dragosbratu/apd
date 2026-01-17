@@ -60,11 +60,11 @@ Documentația include pașii de montaj, configurare, testare și eventuale îmbu
 3.  **Montare placă turnantă:** Se atașează discul rotativ peste axul servomotorului.
 
 ### Faza 2: Pregătirea Servomotoarelor pentru Braț
-1.  **Servo 2 :** Se montează bracket-ul din aluminiu (ASB-28) pe servomotor folosind șuruburile de prindere specifice.
-2.  **Servo 3 :** Se montează al doilea bracket ASB-28 pe acest motor. Se adaugă piesa LSS-3DOF-L-01 care va face legătura mecanică.
+1.  **Servo 2 :** Se montează bracket-ul pe servomotor folosind șuruburile.
+2.  **Servo 3 :** Se montează al doilea bracket.
 
 ### Faza 3: Elementele de Legătură (Links)
-**Unirea brațelor:**
+**Unirea brațelor:*
     * Se conectează ansamblul Bazei cu servomotoarele
 
 ### Faza 4: Asamblarea Gripper-ului (Mini Gripper)
