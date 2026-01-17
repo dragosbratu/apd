@@ -64,8 +64,8 @@ Documentația include pașii de montaj, configurare, testare și eventuale îmbu
 2.  **Servo 3 :** Se montează al doilea bracket.
 
 ### Faza 3: Elementele de Legătură (Links)
-**Unirea brațelor:*
-    * Se conectează ansamblul Bazei cu servomotoarele
+Unirea brațelor:
+    Se conectează ansamblul Bazei cu servomotoarele
 
 ### Faza 4: Asamblarea Gripper-ului (Mini Gripper)
 1.  **Mecanism:** Se asamblează roțile dințate și brațele paralele ale kitului .
@@ -86,13 +86,9 @@ Documentația include pașii de montaj, configurare, testare și eventuale îmbu
 Platformă: LSS FlowArm (Windows)
 
 ## Compilare și upload
-Se conectează robotul şi se alocă unu ID unic pentru fiecare servomotor după conectare.
-
-## ETC
+Se conectează robotul şi se alocă un ID unic pentru fiecare servomotor după conectare.
 
 
-
-## Progres 
 ## Progres echipă
 
 | Nr. | Etapă                         | Descriere scurtă                                  | Status | Data finalizării |
