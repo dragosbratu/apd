@@ -54,32 +54,6 @@ Pe parcursul majorității ședințelor de laborator, activitatea a fost concent
 | Șurub autofiletant #2 | PHTS-01 | 15 | fixare |
 | Șaibă 3 x 5.6mm | SW-04 | 26 | distribuție forță |
 
-
-## Asamblare pas cu pas
-
-Asamblarea mecanică a fost realizată etapizat, urmând ghidul oficial al producătorului și respectând principiile de montaj modular specifice sistemului SES‑V2.
-
-| Servo Setup – Assembly A | Base Rotate Assembly |
-|---|---|
-| ![Servo Setup](1.jpg) | ![Base Rotate](./images/2.jpg) |
-| Pregătirea servomotoarelor LSS-ST1 pentru montaj. | Asamblarea mecanismului de rotație a bazei. |
-
-| Base Assembly | Links Assembly – structură |
-|---|---|
-| ![Base Assembly](./images/3.jpg) | ![Links Assembly](./images/4.jpg) |
-| Stabilizarea bazei și montajul suporturilor. | Montarea segmentelor principale ale brațului. |
-
-| Mini Gripper – asamblare | Links Assembly – configurare finală |
-|---|---|
-| ![Mini Gripper](./images/5.jpg) | ![Links Final](./images/6.jpg) |
-| Asamblarea efectorului final. | Ajustarea și fixarea articulațiilor. |
-
-| Ansamblu aproape final | Ansamblu final |
-|---|---|
-| ![Ansamblu](./images/8.jpg) | ![Final](./images/9.jpg) |
-| Structură completă mecanic, pregătită pentru testare. | Configurația finală a brațului robotic. |
-
-
 ### Pregătirea spațiului de lucru
 
 Înainte de montaj, au fost respectate următoarele etape:
@@ -88,25 +62,39 @@ Asamblarea mecanică a fost realizată etapizat, urmând ghidul oficial al produ
     
 -   verificarea integrității mecanice a componentelor
 
-...
-TODO 
-(Asamblarea și după conectarea cablurilor)
+## Asamblare pas cu pas
+
+Asamblarea mecanică a fost realizată etapizat, urmând ghidul oficial al producătorului și respectând principiile de montaj modular specifice sistemului SES‑V2.
+
+| Servo Setup – Assembly A | Base Rotate Assembly |
+|---|---|
+| ![Servo Setup](img1.jpeg) | ![Base Rotate](img2.jpeg) |
+| Pregătirea servomotoarelor LSS-ST1 pentru montaj. | Asamblarea mecanismului de rotație a bazei. |
+
+| Base Assembly | Links Assembly – structură |
+|---|---|
+| ![Base Assembly](img3.jpeg) | ![Links Assembly](img4.jpeg) |
+| Stabilizarea bazei și montajul suporturilor. | Montarea segmentelor principale ale brațului. |
+
+| Mini Gripper – asamblare | Links Assembly – configurare finală |
+|---|---|
+| ![Mini Gripper](img5.jpeg) | ![Links Final](img6.jpeg) |
+| Asamblarea efectorului final. | Ajustarea și fixarea articulațiilor. |
+
+| Ansamblu aproape final | Ansamblu final |
+|---|---|
+| ![Ansamblu](img7.jpeg) | ![Final](img8.jpeg) |
+| Structură completă mecanic, pregătită pentru testare. | Configurația finală a brațului robotic. |
 
 
 ## Software
 
 Pentru testare și control s-a utilizat **software-ul oficial Lynxmotion LSS**.
 
-### Platformă utilizată
-
--   Aplicație Lynxmotion LSS (PC)
-
 ### Detectarea servomotoarelor
 
 După conectare, software-ul permite scanarea  și detectarea automată a servomotoarelor. Fiecărui servo îi este asociat un **ID unic**, necesar pentru adresare individuală.
     
-
-
 După validarea fiecărui servo, a fost testat întregul ansamblu.
 
 ### Testarea funcționalității
