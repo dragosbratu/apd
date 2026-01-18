@@ -11,7 +11,7 @@
 
 ## Descriere Generală
 
-Acest proiect documentează etapele de asamblare, configurare hardware și programare a robotului mobil **10008 Omni 4WS V1.1**. Scopul final este realizarea unui vehicul autonom capabil de mișcare holonomică (omnidirecțională) controlată prin placa de dezvoltare Arduino. Documentația acoperă lista de componente, pașii de montaj, setările mediului de dezvoltare și codul sursă utilizat pentru demonstrarea funcționalităților.
+Acest proiect documentează etapele de asamblare, configurare hardware și programare a robotului mobil **10008 Omni 4WS V1.1**. Scopul final este realizarea unui vehicul autonom capabil de mișcare holonomică (omnidirecțională) controlată prin placa de dezvoltare Arduino. Documentația acoperă lista de componente, pașii de montaj, setările mediului de dezvoltare și logica algoritmului de control.
 
 ---
 
@@ -99,69 +99,28 @@ Proiectul depinde de următoarele librării (trebuie copiate în folderul `/libr
 
 ---
 
-# Codul Sursă și Explicații
+# Logica Software
 
-Programul încărcat pe robot execută o secvență demonstrativă care evidențiază stabilitatea deplasării liniare și precizia rotației.
+> **Notă:** Codul sursă complet poate fi găsit în directorul `/src` al acestui proiect.
 
-### Funcționalitatea Codului
+Algoritmul implementat demonstrează capacitatea robotului de a executa mișcări precise, utilizând feedback-ul de la encodere și controlul PID.
 
-1. **Inițializare:** Configurează timer-ele interne pentru PWM la 31kHz (pentru a reduce zgomotul motoarelor) și activează sistemul PID.
-2. **Secvența Loop:**
-    - Robotul avansează liniar pe o distanță scurtă.
-    - Face o pauză pentru stabilizare.
-    - Execută o rotație pe loc (spot turn) controlată, simulând o scanare de 360 de grade.
-    - Se oprește complet.
+### 1. Inițializare (Setup)
 
-### Codul Complet
+La pornire, microcontrolerul configurează timer-ele interne pentru a genera semnale PWM la frecvența de **31kHz**. Această frecvență ridicată este esențială pentru funcționarea silențioasă a motoarelor DC. Tot aici se activează algoritmul PID, care va ajusta automat puterea trimisă motoarelor pentru a menține viteza constantă indiferent de suprafața de rulare.
 
-```cpp
-#include <PinChangeInt.h>
-#include <PinChangeIntConfig.h>
-#include <EEPROM.h>
-#include <fuzzy_table.h>
-#include <PID_Beta6.h>
-#include <MotorWheel.h>
-#include <Omni4WD.h>
+### 2. Bucla Principală (Loop)
 
-irqISR(irq1,isr1);
-MotorWheel wheel1(3,2,4,5,&irq1);
+Robotul execută repetitiv următoarea secvență de mișcări:
 
-irqISR(irq2,isr2);
-MotorWheel wheel2(11,12,14,15,&irq2);
+1. **Deplasare Liniară:** Robotul accelerează și menține o viteză constantă de 200 mm/s spre înainte.
+2. **Frânare Controlată:** Se utilizează o funcție de decelerare (`setCarSlow2Stop`) pentru a opri robotul fără șocuri mecanice.
+3. **Rotație pe loc (Spot Turn):** Roțile se rotesc în sensuri opuse, permițând robotului să se rotească în jurul propriei axe (360 de grade).
+4. **Oprire Finală:** Robotul intră într-o stare de repaus înainte de a relua ciclul sau a primi noi comenzi.
 
-irqISR(irq3,isr3);
-MotorWheel wheel3(9,8,16,17,&irq3);
+Această logică evidențiază avantajul platformei omnidirecționale: capacitatea de a schimba direcția sau orientarea fără a necesita o rază de viraj.
 
-irqISR(irq4,isr4);
-MotorWheel wheel4(10,7,18,19,&irq4);
-
-
-void setup() {
-
-  TCCR1B=TCCR1B&0xf8|0x01;    
-  TCCR2B=TCCR2B&0xf8|0x01;    
-    
-
-  Omni.PIDEnable(0.31,0.01,0,10);
-}
-
-void loop() {
-  Omni.setCarAdvance(200);
-  Omni.delayMS(1500); 
-
-  Omni.setCarSlow2Stop(300);
-  Omni.delayMS(500); 
-
- 
-  Omni.setCarRotate(200); 
-  
-  Omni.delayMS(3800); 
-
-  Omni.setCarSlow2Stop(300);
-  Omni.delayMS(2000); 
-}
-
-```
+---
 
 ## Progresul Echipei
 
@@ -176,5 +135,5 @@ void loop() {
 | 7 | Documentare și imagini | Scriere README, poze, diagrame, linkuri utile | ✅ | 10.12.2025 |
 | 8 | Prezentare finală | Demonstrație funcțională în laborator | ✅ | 10.12.2025 |
 
-Legenda status:  
+Legenda status:  
 ✅ = Finalizat &emsp; ⏳ = În desfășurare &emsp; ❌ = Neînceput
