@@ -1,0 +1,1 @@
+documentatia de montaj, poze, diagrame, linkuri utile
